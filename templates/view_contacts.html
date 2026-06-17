@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saved Contacts</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>📞 Saved Emergency Contacts</h1>
+
+<div class="card">
+
+{% for contact in contacts %}
+
+<p>{{contact}}</p>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>

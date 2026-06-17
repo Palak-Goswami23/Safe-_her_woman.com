@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safe Route Recommendation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🗺 Safe Route Recommendation</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="source"
+            placeholder="Enter Starting Location"
+            required>
+
+        <input
+            type="text"
+            name="destination"
+            placeholder="Enter Destination"
+            required>
+
+        <button type="submit">
+            Check Route Safety
+        </button>
+
+    </form>
+
+    {% if route_status %}
+
+    <div class="card">
+
+        <h2>Route Status</h2>
+
+        <h3>{{route_status}}</h3>
+
+        <p>{{route_advice}}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

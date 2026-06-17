@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice SOS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎤 Voice SOS System</h1>
+
+<button onclick="startRecognition()">
+    Start Listening
+</button>
+
+<p id="output"></p>
+
+</div>
+
+<script>
+
+function startRecognition(){
+
+    const recognition =
+    new webkitSpeechRecognition();
+
+    recognition.start();
+
+    recognition.onresult = function(event){
+
+        let text =
+        event.results[0][0].transcript;
+
+        document.getElementById(
+            "output"
+        ).innerHTML = text;
+
+        if(
+            text.toLowerCase().includes("help")
+            ||
+            text.toLowerCase().includes("sos")
+        ){
+
+            window.location.href="/sos";
+        }
+    };
+}
+
+</script>
+
+</body>
+</html>

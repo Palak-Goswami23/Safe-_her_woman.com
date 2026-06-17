@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafeHer AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="logo">🛡️ SafeHer AI</div>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/route">Safe Route</a></li>
+        <li><a href="/nearby">Nearby Services</a></li>
+        <li><a href="/chatbot">Chatbot</a></li>
+    </ul>
+
+    <section class="hero">
+    <div class="hero-left">
+        <h1>Your Safety,<br><span>Our Priority</span></h1>
+
+        <p>
+            AI powered women safety platform with
+            safe routes, emergency SOS and chatbot support.
+        </p>
+
+        <button class="check-btn">Check Safety</button>
+        <button class="sos-btn">SOS Emergency</button>
+    </div>
+
+    <div class="hero-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" width="300">
+    </div>
+</section>
+
+<div class="cards">
+
+<div class="card">
+<h3>AI Safety Check</h3>
+<p>Check safety score instantly</p>
+</div>
+
+<div class="card">
+<h3>Safe Route</h3>
+<p>Find safest route</p>
+</div>
+
+<div class="card">
+<h3>Nearby Help</h3>
+<p>Police & Hospitals</p>
+</div>
+
+<div class="card">
+<h3>AI Chatbot</h3>
+<p>24x7 Assistance</p>
+</div>
+
+</div>
+
+    <div>
+        <a href="/login" class="btn-outline">Login</a>
+        <a href="/signup" class="btn-primary">Signup</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🛡 SafeHer AI</h1>
+        <p>Intelligent Women Safety Prediction System</p>
+    </div>
+
+    <div class="card">
+
+        <form action="/predict" method="post">
+
+            <input type="number" name="crime_rate"
+                   placeholder="Crime Rate (1-10)" required>
+
+            <input type="number" name="crowd_density"
+                   placeholder="Crowd Density (1-10)" required>
+
+            <input type="number" name="lighting"
+                   placeholder="Lighting (1-10)" required>
+
+            <input type="number" name="time"
+                   placeholder="Hour (0-23)" required>
+
+            <button type="submit">
+                Check Safety
+            </button>
+
+        </form>
+
+    </div>
+
+    {% if score %}
+
+    <div class="result">
+
+        <h2>Safety Score: {{score}}%</h2>
+
+        <h2 style="color: red; ">
+            {{status}}
+        </h2>
+       <p>{{recommendation}}</p> 
+
+    </div>
+
+    {% endif %}
+
+    <div class="sos">
+
+        <a href="/sos">
+    <button>SOS EMERGENCY</button>
+</a>
+
+<a href="/route">
+    <button>🗺 Safe Route</button>
+</a>
+
+<a href="/nearby">
+    <button>📍 Nearby Services</button>
+</a>
+
+<a href="/voice">
+    <button>🎤 Voice SOS</button>
+</a>
+
+    </div>
+
+    <div style="text-align:center; margin:20px;">
+    <a href="/dashboard"><button>Dashboard</button></a>
+    <a href="/login"><button>Login</button></a>
+    <a href="/signup"><button>Signup</button></a>
+    <a href="/chatbot"><button>Chatbot</button></a>
+</div>
+
+</div>
+
+</body>
+</html>

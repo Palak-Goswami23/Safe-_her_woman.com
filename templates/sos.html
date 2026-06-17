@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency SOS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚨 SOS ALERT ACTIVATED</h1>
+
+    <div class="card">
+        <h2>Status</h2>
+        <h3>Emergency Alert Sent</h3>
+    </div>
+
+    <div class="card">
+        <h2>📍 Current Location</h2>
+        <p id="location">Fetching location...</p>
+    </div>
+
+    <div class="card">
+        <h2>📞 Emergency Contacts</h2>
+        <p>Police: 112</p>
+        <p>Women Helpline: 1090</p>
+        <p>Ambulance: 108</p>
+    </div>
+
+    <div class="card">
+        <h2>🕒 Alert Time</h2>
+        <p id="time"></p>
+    </div>
+
+</div>
+
+<script>
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+    document.getElementById("location").innerHTML =
+    "Latitude: " +
+    position.coords.latitude +
+    "<br>Longitude: " +
+    position.coords.longitude;
+
+});
+
+document.getElementById("time").innerHTML =
+new Date().toLocaleString();
+
+</script>
+
+</body>
+</html>

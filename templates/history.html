@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOS History</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🚨 SOS Alert History</h1>
+
+<div class="card">
+
+{% for alert in alerts %}
+
+<p>{{alert}}</p>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>
