@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
 import sqlite3
-import joblib
+#import joblib
 
 
 from flask import Flask, render_template, request, redirect, session
@@ -44,7 +44,7 @@ def send_alert_email():
 
         smtp.send_message(msg)
 
-model = joblib.load("model/safety_model.pkl")
+#model = joblib.load("model/safety_model.pkl")
 
 @app.route("/")
 def home():
